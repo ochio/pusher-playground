@@ -9,8 +9,16 @@ let channel = channels.subscribe('jovial-swamp-85')
 // Bind a callback function to an event within the subscribed channel
 channel.bind('event-name', function (data) {
   // Do what you wish with the data from the event
+	console.log(data);
   console.log('connect!!!!!')
 })
+
+channel.bind('event2', function (data) {
+  // Do what you wish with the data from the event
+	console.log(data);
+  console.log('connect2!!!!!')
+})
+
 
 async function pushData(data) {
   const res = await fetch('/api/channels-event', {
